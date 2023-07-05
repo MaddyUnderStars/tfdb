@@ -1,0 +1,17 @@
+# certbot (ssl) config omitted
+
+server {
+	root /var/www/html;
+	index index.html;
+
+	server_name tfdb.understars.dev;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	location /fastdl {
+		alias /home/gameserver/fastdl;
+		autoindex on;
+	}
+}
