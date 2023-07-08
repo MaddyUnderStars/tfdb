@@ -21,7 +21,7 @@ the current bot plugin is available [here](https://github.com/lzardy/tf2db-advan
 ## ranking
 the ranking plugin is based on [this](https://forums.alliedmods.net/showpost.php?p=1959185&postcount=72),
 modified slightly so that it registers commands properly rather than hooking `say`/`say_team`.
-you can find the modified source [here](https://github.com/MaddyUnderStars/blob/master/3r/addons/sourcemod/scripting/elotf2.sp)
+you can find the modified source [here](https://github.com/MaddyUnderStars/tfdb/blob/master/3r/addons/sourcemod/scripting/elotf2.sp)
 
 ## fun shit
 
