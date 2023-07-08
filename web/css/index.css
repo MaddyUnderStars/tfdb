@@ -1,0 +1,30 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+	width: 100vw;
+	height: 70vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 2rem;
+
+	background-color: black;
+	/* TODO: collect footage of 3r, aerial view */
+}
+
+.leaderboard {
+	display: flex;
+	justify-content: center;
+}

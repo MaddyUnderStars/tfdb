@@ -1,15 +1,44 @@
-<html>
-<style>
-	* {
-		margin: 0;
-		padding: 0;
-	}
-</style>
+<!DOCTYPE html>
+<html lang="en">
 
-<body style="height: 100vh">
-	<div style="height: 100%; display: flex; justify-content: center; align-items: center;">
-		<h1>maddy tfdb</h1>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Maddy's TFDB</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+	<div class="header">
+		<h1>Maddy TFDB</h1>
+		<p>it's pretty shit i think</p>
 	</div>
+
+	<div class="leaderboard">
+		<h2>3r Top 10</h2>
+		<div id="board"></div>
+	</div>
+
+	<script>
+		const refresh = async () => {
+			const res = await fetch("https://tfdb.understars.dev/scores");
+			const json = await res.json();
+			const board = document.getElementById("board");
+
+			for (var score of json.scores) {
+				const elem = document.createElement("p");
+				elem.innerText = `${score.name} - ${score.rating}`
+				board.appendChild(elem);
+			}
+		}
+
+		refresh();
+	</script>
 </body>
 
 </html>
