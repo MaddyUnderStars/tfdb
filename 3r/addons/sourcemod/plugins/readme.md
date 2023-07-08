@@ -18,7 +18,12 @@ The following core tfdb plugins are from [this repo](https://github.com/x07x08/T
 ## bot
 the current bot plugin is available [here](https://github.com/lzardy/tf2db-advancedbot/tree/master)
 
-# fun shit
+## ranking
+the ranking plugin is based on [this](https://forums.alliedmods.net/showpost.php?p=1959185&postcount=72),
+modified slightly so that it registers commands properly rather than hooking `say`/`say_team`.
+you can find the modified source [here](https://github.com/MaddyUnderStars/blob/master/3r/addons/sourcemod/scripting/elotf2.sp)
+
+## fun shit
 
 - [killstreak.smx](https://forums.alliedmods.net/showthread.php?p=2092213)
 - [pyrovision.smx](https://forums.alliedmods.net/showthread.php?t=188646)
@@ -26,7 +31,7 @@ the current bot plugin is available [here](https://github.com/lzardy/tf2db-advan
 - [ThirdPerson.smx](https://forums.alliedmods.net/showthread.php?p=1694178)
 - [fov_manager.smx](https://forums.alliedmods.net/showthread.php?p=2736253)
 
-# other
+## other
 
 - [helpmenu.smx](https://forums.alliedmods.net/showthread.php?p=637467)
 - [AdminList.smx](https://forums.alliedmods.net/showthread.php?p=594854)
