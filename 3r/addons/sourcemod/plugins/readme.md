@@ -16,7 +16,9 @@ The following core tfdb plugins are from [this repo](https://github.com/x07x08/T
 - TF2DodgeballNoBlock.smx
 
 ## bot
-the current bot plugin is available [here](https://github.com/lzardy/tf2db-advancedbot/tree/master)
+the bot plugin based on [this plugin](https://github.com/lzardy/tf2db-advancedbot/tree/master),
+modified slightly to fix a bug detailed [here](https://github.com/x07x08/TF2-Dodgeball-Modified/issues/10).
+you can find the modified source [here](https://github.com/MaddyUnderStars/tfdb/blob/master/3r/addons/sourcemod/scripting/bot.sp)
 
 ## ranking
 the ranking plugin is based on [this](https://forums.alliedmods.net/showpost.php?p=1959185&postcount=72),
