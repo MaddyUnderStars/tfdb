@@ -15,29 +15,73 @@
 
 <body>
 	<div class="header">
-		<h1>Maddy TFDB</h1>
-		<p>it's pretty shit i think</p>
+		<a href="steam://connect/168.138.100.213:27015?appid=440">
+			<h1>Maddy TFDB</h1>
+		</a>
 	</div>
 
 	<div class="leaderboard">
-		<h2>3r Top 10</h2>
-		<div id="board"></div>
+		<h2>Leaderboard</h2>
+		<div class="board-opts">
+			<!-- <input type="text" placeholder="Search by name" id="search" /> -->
+			<button id="prev">&lt;</button>
+			<button id="next">&gt;</button>
+		</div>
+		<table id="board">
+
+		</table>
 	</div>
 
 	<script>
-		const refresh = async () => {
-			const res = await fetch("https://tfdb.understars.dev/scores");
+		let offset = 0;
+
+		document.getElementById("next").addEventListener("click", () => {
+			offset += 10;
+			return updateBoard();
+		});
+
+		document.getElementById("prev").addEventListener("click", () => {
+			offset -= 10;
+			return updateBoard();
+		});
+
+		const updateBoard = async () => {
+			offset = Math.max(0, offset);
+
+			const res = await fetch(`https://tfdb.understars.dev/api/scores?offset=${offset}`);
 			const json = await res.json();
+
+			if (json.scores.length == 0) {
+				offset -= 10;
+				return updateBoard();
+			}
+
 			const board = document.getElementById("board");
 
-			for (var score of json.scores) {
-				const elem = document.createElement("p");
-				elem.innerText = `${score.name} - ${score.rating}`
-				board.appendChild(elem);
-			}
-		}
+			board.innerHTML = "<tr><th>Rank</th><th>Player</th><th>ELO</th></tr>";
 
-		refresh();
+			for (let i = 0; i < json.scores.length; i++) {
+				const score = json.scores[i];
+				const tr = document.createElement("tr");
+
+				const position = document.createElement("td");
+				position.innerText = offset + i + 1;
+
+				const player = document.createElement("td");
+				player.innerText = score.name;
+
+				const ranking = document.createElement("td");
+				ranking.innerText = score.rating;
+
+				tr.appendChild(position);
+				tr.appendChild(player);
+				tr.appendChild(ranking);
+
+				board.appendChild(tr);
+			}
+		};
+
+		updateBoard();
 	</script>
 </body>
 

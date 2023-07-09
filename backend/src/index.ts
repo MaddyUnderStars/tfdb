@@ -7,7 +7,7 @@ import ErrorHandler from "./errors";
 
 const app = express();
 
-app.use(ScoreApi);
+app.use("api/", ScoreApi);
 app.use(ErrorHandler);
 
 const start = async () => {
@@ -16,6 +16,8 @@ const start = async () => {
 		user: "db",
 		database: "dbrank",
 	});
+
+	await connection.connect();
 
 	app.set("db", connection);
 	
