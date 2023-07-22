@@ -15,7 +15,7 @@ const start = async () => {
 		connectionLimit: 2,
 	});
 
-	app.use("api/", ScoreApi);
+	app.use("/", ScoreApi);
 	app.use(ErrorHandler);
 
 	app.set("db", connection);
