@@ -7,17 +7,18 @@ import ErrorHandler from "./errors";
 
 const app = express();
 
-app.use("api/", ScoreApi);
-app.use(ErrorHandler);
-
 const start = async () => {
-	const connection = await mysql.createConnection({
+	const connection = mysql.createPool({
 		host: "127.0.0.1",
 		user: "db",
 		database: "dbrank",
+		connectionLimit: 2,
 	});
 
 	await connection.connect();
+
+	app.use("api/", ScoreApi);
+	app.use(ErrorHandler);
 
 	app.set("db", connection);
 	

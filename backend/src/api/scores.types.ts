@@ -1,4 +1,4 @@
-import { Record, Number, Array, String, Static } from "runtypes";
+import { Record, Number, Array, String } from "runtypes";
 
 export const ScoresQuery = Record({
 	offset: String.optional(),
