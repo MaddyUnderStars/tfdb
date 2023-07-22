@@ -15,8 +15,6 @@ const start = async () => {
 		connectionLimit: 2,
 	});
 
-	await connection.connect();
-
 	app.use("api/", ScoreApi);
 	app.use(ErrorHandler);
 
