@@ -2,7 +2,7 @@ this repo contains my tfdb server configs.
 currently, that is just a 3r server hosted at tfdb.understars.dev.
 
 you'll find the server cfg and sourcemod plugin configs here including the dodgeball config,
-as well as a full list of plugins with links
+as well as a full list of plugins with links and source code for modified plugins.
 
 the server setup is probably reasonably standard
 - fastdl at tfdb.understars.dev/fastdl using nginx
